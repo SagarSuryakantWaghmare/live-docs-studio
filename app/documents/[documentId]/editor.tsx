@@ -4,7 +4,10 @@ import {useEditor,EditorContent} from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
 import TaskList from '@tiptap/extension-task-list';
 import TaskItem from '@tiptap/extension-task-item';
-
+import {Table} from '@tiptap/extension-table';
+import {TableRow} from '@tiptap/extension-table-row';
+import {TableHeader} from '@tiptap/extension-table-header';
+import {TableCell} from '@tiptap/extension-table-cell';
 export const Editor=()=>{
     const editor=useEditor({
         editorProps:{
@@ -15,6 +18,10 @@ export const Editor=()=>{
         },
         extensions:[
             StarterKit,
+            Table,
+            TableCell,
+            TableHeader,
+            TableRow,
             TaskItem.configure({
                 nested: true,
             })
