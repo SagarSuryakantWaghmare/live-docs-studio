@@ -11,6 +11,8 @@ import { TableCell } from '@tiptap/extension-table-cell';
 import Image from '@tiptap/extension-image';
 import Dropcursor from '@tiptap/extension-dropcursor';
 import {useEditorStore} from '@/store/use-editor-store';
+import { TextStyle } from '@tiptap/extension-text-style'
+import { FontFamily } from '@tiptap/extension-text-style/font-family'
 export  const Editor = () => {
     const {setEditor}=useEditorStore();
     console.log("Toolbar Editor ", setEditor)
@@ -44,7 +46,9 @@ export  const Editor = () => {
             }
         },
         extensions: [
+            TextStyle,
             StarterKit,
+            FontFamily,
             Table,
             TableCell,
             TableHeader,
